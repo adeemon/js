@@ -1,5 +1,4 @@
-let number=0; //Input number
-number = prompt ('Ввод данных:','Введите число, для которого нужно вычислить факториал')
+let number=10; //Input number
 function factorial(n) {
 if (n!==0) {
   return n != 1 ? n * factorial(n - 1) : 1;
