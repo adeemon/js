@@ -1,0 +1,7 @@
+C:\Users\Покемон\source\repos\EPAM task 1.1\task 1.1.6\bin\Debug\task 1.1.6.exe.config
+C:\Users\Покемон\source\repos\EPAM task 1.1\task 1.1.6\bin\Debug\task 1.1.6.exe
+C:\Users\Покемон\source\repos\EPAM task 1.1\task 1.1.6\bin\Debug\task 1.1.6.pdb
+C:\Users\Покемон\source\repos\EPAM task 1.1\task 1.1.6\obj\Debug\task 1.1.6.csproj.CoreCompileInputs.cache
+C:\Users\Покемон\source\repos\EPAM task 1.1\task 1.1.6\obj\Debug\task 1.1.6.exe
+C:\Users\Покемон\source\repos\EPAM task 1.1\task 1.1.6\obj\Debug\task 1.1.6.pdb
+C:\Users\Покемон\source\repos\EPAM task 1.1\task 1.1.6\obj\Debug\task 1.1.6.csprojAssemblyReference.cache

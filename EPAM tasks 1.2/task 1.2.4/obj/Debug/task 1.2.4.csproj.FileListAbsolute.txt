@@ -1,0 +1,6 @@
+C:\Users\Покемон\source\repos\EPAM tasks 1.2\task 1.2.4\bin\Debug\task 1.2.4.exe.config
+C:\Users\Покемон\source\repos\EPAM tasks 1.2\task 1.2.4\bin\Debug\task 1.2.4.exe
+C:\Users\Покемон\source\repos\EPAM tasks 1.2\task 1.2.4\bin\Debug\task 1.2.4.pdb
+C:\Users\Покемон\source\repos\EPAM tasks 1.2\task 1.2.4\obj\Debug\task 1.2.4.csproj.CoreCompileInputs.cache
+C:\Users\Покемон\source\repos\EPAM tasks 1.2\task 1.2.4\obj\Debug\task 1.2.4.exe
+C:\Users\Покемон\source\repos\EPAM tasks 1.2\task 1.2.4\obj\Debug\task 1.2.4.pdb
