@@ -43,6 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\Paint.cs" />
+    <Compile Include="Figures\Circle.cs" />
+    <Compile Include="Figures\Disc.cs" />
+    <Compile Include="Figures\FiguresAbstract.cs" />
+    <Compile Include="Figures\Line.cs" />
+    <Compile Include="Figures\Rectangle.cs" />
+    <Compile Include="Figures\Ring.cs" />
+    <Compile Include="Figures\Square.cs" />
+    <Compile Include="Figures\Triangle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
