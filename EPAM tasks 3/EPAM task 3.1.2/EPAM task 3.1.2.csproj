@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{229EE2E9-0A9D-43C1-93EF-430E305549E3}</ProjectGuid>
+    <ProjectGuid>{B9279A46-C987-47C1-B0D2-159E25996EEE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EPAM_task_2._2._1</RootNamespace>
-    <AssemblyName>EPAM task 2.2.1</AssemblyName>
+    <RootNamespace>EPAM_task_3._1._2</RootNamespace>
+    <AssemblyName>EPAM task 3.1.2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,12 +45,14 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\OutputHandler.cs" />
+    <Compile Include="UI\UI.cs" />
+    <Compile Include="WordsCounter\Word.cs" />
+    <Compile Include="WordsCounter\WordsCounter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
