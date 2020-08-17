@@ -49,6 +49,8 @@ module.exports = class Service {
         if (this.dataArray[replacedId]) {
             newObject.id = replacedId;
             this.dataArray[replacedId] = newObject;
+        } else {
+            console.log("Wrong replacing ID")
         }
     }
 }
