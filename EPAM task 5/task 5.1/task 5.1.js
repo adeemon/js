@@ -15,10 +15,9 @@ function deleteSameChars (inputStr)
 
   for (let i=0; i<inputStr.length; ++i)
   {
-    if (!arrayOfSameWords.includes(inputStr[i]))
+    if (!arrayOfSameWords.includes(inputStr[i].toLowerCase()))
     {
       outputString+=inputStr[i];
-      
     }
   }
   return outputString;
@@ -29,16 +28,16 @@ function findSameChars (inputString)
   let arrayOfSameWords = [];
   for (let i=0; i < inputString.length-1;++i)
   {
-  	if (isLetter(inputString[i])&&!(arrayOfSameWords.includes(inputString[i])))
+  	if (isLetter(inputString[i])&&!(arrayOfSameWords.includes(inputString[i].toLowerCase())))
     {
       let counter = 1;
-      let nextSymbol = inputString[i+counter];
+      let nextSymbol = inputString[i+counter].toLowerCase();
       
       while (isLetter(nextSymbol))
       {
-      	if (inputString[i]==nextSymbol) 
+      	if (inputString[i].toLowerCase()==nextSymbol.toLowerCase()) 
         {
-        	arrayOfSameWords.push(inputString[i]);
+        	arrayOfSameWords.push(inputString[i].toLowerCase());
           break;
         }
         counter++;
@@ -50,4 +49,6 @@ function findSameChars (inputString)
 }
 
 console.log (deleteSameChars(inputString));
+
+
 
