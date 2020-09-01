@@ -1,0 +1,51 @@
+body {
+    background-color: #4E6379;
+    font-family: arial, sans-serif;
+}
+
+.services {
+    width: 49em;
+    height: 10em;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 20px;
+    padding: 1em 0em;
+    text-align: center;
+    box-shadow: 0 0 5em 1px rgba(0,0,0,0.5);
+}
+
+.services div{
+    display: inline-block;
+    width: 16em;
+    height: 8em;
+    padding-bottom: 2.2em;
+}
+
+.services h3 {
+    color: #F56332;
+    margin: 8px 0px;
+}
+
+.services button{
+    margin: 10px;
+    height: 2em;
+    width: 8em;
+    background-color: #F56332;
+    border-width: 0px;
+}
+
+.cloudHosting {
+    border-width: 1px;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-color: grey;
+}
+
+.services img {
+    height: 3em;
+    width: 3em;
+}

@@ -1,0 +1,26 @@
+.listMenu {
+  width: 170px;
+  padding: 10px;
+  background-color: #F9E497;
+  border-style: outset;
+  border-width: 5px;
+  border-radius: 10px;
+  border-color: #A33A36;
+  border-left-width: 0;
+  border-top-width: 0;
+  text-align: left;
+}
+
+.listMenu li {
+  color: #A33A36;
+  line-height: 20px;
+  list-style-type: none;
+}
+
+.listMenu ul {
+  width: 100%;
+  text-align: left;
+  padding: 0px;
+  margin: 0px;
+}
+

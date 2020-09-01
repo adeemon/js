@@ -1,0 +1,29 @@
+<div class="registrationForm">
+ <div class="registrationFormTitle"> 
+   <h2>
+     Регистрация 
+   </h2>
+ </div>
+ <hr> 
+ 
+ <form class ="registrationFormInput" action="something.html" method="GET">
+   <label for="email">E-mail</label>
+   <br>
+   <input id="email" name="username" type="text">
+   <br>
+   <br>
+   <div class="passwordCheck">
+   <label for="password">Пароль</label>
+   <br>
+   <input id="password" name="password" type="password">
+   </div>
+   <div class="repeatedPasswordCheck">
+   <label for="repeatedPassword">Ещё раз</label>
+   <br>
+   <input id="repeatedPassword" name="repeatedPassword" type="password">
+   </div> 
+   <br>
+   <br>
+   <input class ="submitButton" type="submit" value="Отправить">
+ </form>
+</div>

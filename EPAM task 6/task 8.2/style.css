@@ -1,0 +1,67 @@
+.registrationForm {
+  width: 400px;
+  padding: 0px;
+  background-color: #0690CF;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #0074B1;
+  text-align: left;
+  
+}
+
+.registrationForm hr {
+    border: none; 
+    background-color: white; 
+    height: 2px; 
+    }
+    
+   .registrationFormTitle {
+    padding-top: 10px;
+    padding-left: 10px;
+    color: white;
+    font-family: arial, sans-serif;
+    font-weight: 1000;
+    }
+    
+    .registrationFormTitle h2 {
+    margin-top: 10px;
+    font-family: arial, sans-serif;
+    font-weight: 1;
+    font-stretch: ultra-expanded;
+    }
+    
+    #email {
+      width: 300px;
+    }
+    
+    .registrationFormInput {
+    color: white;
+    padding: 10px;
+    font-family: arial, sans-serif;
+    border-width: 0px;
+    }
+    
+    #password {
+      width: 135px;
+      margin-right: 10px;
+    }
+    
+    #repeatedPassword {
+      width: 143px;
+    }
+    
+    .passwordCheck {
+      display: inline-block;
+    }
+    
+    .repeatedPasswordCheck {
+      display: inline-block;
+    }
+    
+    .submitButton {
+      background-color: #FFDF7F;
+      color: black;
+      border-width: 0px;
+      width: 80px;
+      height: 30px;
+    }
