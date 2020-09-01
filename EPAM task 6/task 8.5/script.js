@@ -7,14 +7,15 @@ const closeButton = document.querySelector('.editor-window-closebutton');
 const addButton = document.querySelector('.add-button');
 const editorTitleField = document.querySelector('.editor-window-title');
 const editorTextField = document.querySelector('.editor-window-textarea');
-let isEdditing = false;
+let editable = true;
+let rawDeliting = false;
+let id = 0;
+
 
 document.querySelector(".editor-window-closebutton").addEventListener("click", closeModel, true);
-document.querySelector(".editor-window-savebutton").addEventListener("click ", setupChanges, true);
+document.querySelector(".add-notes").addEventListener("click ", openModel, true);
 
-
-
-storage.add(['Привет!', 'Тестовая заметочка']);
+storage.add(['Привет!', 'Тестовая заметочкddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddа']);
 
 AddContainingNotes();
 
@@ -23,28 +24,31 @@ function AddContainingNotes() {
     let allNotes = storage.getAll();
 
     for (let key of allNotes) {
-        console.log(key);
-        AddNote(key.id, key[0], key[1]);
+        AddNote(key[0], key[1]);
     }
 }
 
-function noteClick () {
+function noteClick() {
+    if (!editable) {
+        editable = true;
+        return;
+    }
     openModel();
-    console.log(this);
     let noteId = this.id;
 
     let noteTitle = this.querySelector(".note-header").innerHTML;
     let noteText = this.querySelector(".note-text").innerHTML;
 
-    setupChanges(noteId, noteTitle, noteText, this);
-    
+    setupChangesNode(noteId, noteTitle, noteText, this);
+
 }
 
-function setupChanges(id, title, text) {
+function setupChangesNode(id, title, text) {
 
     document.querySelector(".editor-window-title").value = title;
     document.querySelector(".editor-window-textarea").value = text;
     document.querySelector(".editor-window-id").value = id;
+    document.querySelector(".editor-window-savebutton").value = "Изменить";
 
     document.querySelector(".editor-window-savebutton").addEventListener("click", changeNote)
 
@@ -52,27 +56,69 @@ function setupChanges(id, title, text) {
 
 const changeNote = () => {
     let editorNote = event.target.parentNode;
-    
+
     let id = editorNote.querySelector(".editor-window-id").value;
     let newData = editorNote.querySelector(".editor-window-textarea").value;
     let newTitle = editorNote.querySelector(".editor-window-title").value;
-    if (newData.length==0&&newTitle.length==0)
-    {
-        alert("Пустая заметка, для удаления воспользуйтесь кнопкой в углу");
+    if (newData.length == 0 && newTitle.length == 0) {
+        alert("Заметка не может быть пустой!");
         closeModel();
+        resetEditor();
         return;
+
     }
-    let changedNote = notesList.childNodes[id];
+
+    let changedNote = notesList.childNodes[notesList.childNodes.length - id - 1];
 
     console.log(changedNote);
     changedNote.querySelector(".note-text").innerHTML = newData;
     changedNote.querySelector(".note-header").innerHTML = newTitle;
 
-    notesList.childNodes[id] = changedNote;
+    notesList.childNodes[notesList.childNodes.length - id - 1] = changedNote;
 
-    console.log(notesList.childNodes[id]);
+    resetEditor();
     closeModel();
-    
+
+}
+
+function addClick() {
+    resetEditor();
+    openModel();
+
+    setupCreatingNode()
+}
+
+function setupCreatingNode() {
+    document.querySelector(".editor-window-title").placeholder = "Введите заголовок заметки";
+    document.querySelector(".editor-window-textarea").placeholder = "Введите текст заметки";
+    document.querySelector(".editor-window-savebutton").value = "Создать";
+
+    document.querySelector(".editor-window-savebutton").addEventListener("click", makeNote)
+
+}
+
+function makeNote() {
+    let dataNote = event.target.parentNode;
+
+    let newData = dataNote.querySelector(".editor-window-textarea").value;
+    let newTitle = dataNote.querySelector(".editor-window-title").value;
+    AddNote(newTitle, newData);
+    closeModel();
+    resetEditor();
+}
+
+
+
+
+function resetEditor() {
+    document.querySelector(".editor-window-title").value = "";
+    document.querySelector(".editor-window-textarea").value = "";
+    document.querySelector(".editor-window-id").value = "";
+    document.querySelector(".editor-window-savebutton").value = "";
+    document.querySelector(".editor-window-title").placeholder = "";
+    document.querySelector(".editor-window-textarea").placeholder = "";
+    document.querySelector(".editor-window-savebutton").removeEventListener("click", makeNote)
+    document.querySelector(".editor-window-savebutton").removeEventListener("click", changeNote)
 }
 
 function openModel() {
@@ -92,17 +138,15 @@ function RemoveClick() {
     if (confirm('Вы действительно хотите удалить заметку?')) {
         let note = this.parentNode;
         note = note.parentNode;
-        console.log(note);
         storage.deleteById(note.getAttribute('id'));
         note.parentNode.removeChild(note);
-    }
+        editable = false;
+    } else editable = false;
 }
 
+function AddNote(title, text) {
 
-
-function AddNote(id, title, text) {
-
-    if (text.length == 0) console.log("Пустая заметка")
+    if (text.length == 0 && title.length == 0) console.log("Пустая заметка")
     else {
         let bodyElement = document.createElement('div');
         bodyElement.className = 'note';
@@ -138,6 +182,8 @@ function AddNote(id, title, text) {
         bodyElement.appendChild(bodyElementText);
         bodyElement.appendChild(bodyRemoveButton);
 
-        notesList.appendChild(bodyElement);
+        id++;
+
+        notesList.insertBefore(bodyElement, notesList.firstChild);
     }
 }
