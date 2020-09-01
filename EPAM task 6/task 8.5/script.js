@@ -1,4 +1,15 @@
-﻿const storage = new Storage();
+﻿document.addEventListener("DOMContentLoaded", setupListeners);
+
+function setupListeners() {
+    document.querySelector(".editor-window-closebutton").addEventListener("click", closeModel, true);
+    document.querySelector(".add-button").addEventListener("click", addClick);
+    console.log(document.getElementById("add-notes-target"));
+}
+
+window.onload = setupListeners;
+
+
+const storage = new Storage();
 const body = document.querySelector('.body');
 const editor = document.querySelector('.editor-window-container');
 const notesList = document.querySelector(".notes-list");
@@ -10,11 +21,6 @@ const editorTextField = document.querySelector('.editor-window-textarea');
 let editable = true;
 let rawDeliting = false;
 let id = 0;
-
-
-document.querySelector(".editor-window-closebutton").addEventListener("click", closeModel, true);
-document.querySelector(".add-notes").addEventListener("click ", addClick, true);
-
 
 storage.add(['Привет!', 'Тестовая заметочкddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddа']);
 
