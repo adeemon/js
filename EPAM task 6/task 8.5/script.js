@@ -115,8 +115,8 @@ function resetEditor() {
     document.querySelector(".editor-window-textarea").value = "";
     document.querySelector(".editor-window-id").value = "";
     document.querySelector(".editor-window-savebutton").value = "";
-    document.querySelector(".editor-window-title").placeholder = "";
-    document.querySelector(".editor-window-textarea").placeholder = "";
+    document.querySelector(".editor-window-title").placeholder = "Введите заголовок заметки";
+    document.querySelector(".editor-window-textarea").placeholder = "Введите текст заметки";
     document.querySelector(".editor-window-savebutton").removeEventListener("click", makeNote)
     document.querySelector(".editor-window-savebutton").removeEventListener("click", changeNote)
 }
