@@ -13,7 +13,8 @@ let id = 0;
 
 
 document.querySelector(".editor-window-closebutton").addEventListener("click", closeModel, true);
-document.querySelector(".add-notes").addEventListener("click ", openModel, true);
+document.querySelector(".add-notes").addEventListener("click ", addClick, true);
+
 
 storage.add(['Привет!', 'Тестовая заметочкddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddа']);
 
