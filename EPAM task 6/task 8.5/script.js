@@ -1,9 +1,6 @@
-﻿document.addEventListener("DOMContentLoaded", setupListeners);
-
-function setupListeners() {
+﻿function setupListeners() {
     document.querySelector(".editor-window-closebutton").addEventListener("click", closeModel, true);
-    document.querySelector(".add-button").addEventListener("click", addClick);
-    console.log(document.getElementById("add-notes-target"));
+    document.querySelector(".add-notes-target").addEventListener("click", addClick);
 }
 
 window.onload = setupListeners;
