@@ -12,13 +12,10 @@ namespace EPAM_task_3._1._1
         public static void WeakestLink ()
         {
             OutputHandler.PrintText("Input N");
-            int n = 0;
-            Int32.TryParse(Console.ReadLine(), out n);
+            int.TryParse(Console.ReadLine(), out int n);
             OutputHandler.PrintText("Input the order of players choosing");
-            int orderOfExclusion = 0;
-            Int32.TryParse(Console.ReadLine(), out orderOfExclusion);
+            int.TryParse(Console.ReadLine(), out int orderOfExclusion);
             OutputHandler.PrinStartGame(orderOfExclusion);
-
             Engine(n, orderOfExclusion);
         }
 
@@ -53,7 +50,9 @@ namespace EPAM_task_3._1._1
             var players = new List<Player>();
             for (int i = 0; i < numberOfPlayers; ++i)
             {
-                Player tempPlayer = new Player { Position = i };
+                Player tempPlayer = new Player {
+                    Position = i
+                };
                 players.Add(tempPlayer);
             }
             return players;

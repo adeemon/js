@@ -9,7 +9,7 @@ namespace EPAM_task_3._2._1.Arrays
 {
     class DynamicArray<T> : IEnumerable<T>, IEnumerable, ICloneable
     {
-        public int Length;
+        public int Length { get; private set; }
         public int Capacity
         {
             get { return Data.Length; }
@@ -120,7 +120,6 @@ namespace EPAM_task_3._2._1.Arrays
         {
             if (indexOfElement < 0 || indexOfElement > Capacity)
             {
-                //that moment makes me sad - will it work or not ? :D
                 return false;
                 throw new ArgumentOutOfRangeException("Index of inserted element isn't correct.");
             }

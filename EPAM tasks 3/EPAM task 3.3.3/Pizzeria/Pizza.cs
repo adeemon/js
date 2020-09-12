@@ -8,10 +8,10 @@ namespace EPAM_task_3._3._3.Pizzeria
 {
     enum TypesOfPizza
     {
-        Margherita,
-        Pepperoni,
-        Hawaiian,
-        Meat
+        Margherita = 1,
+        Pepperoni = 2,
+        Hawaiian = 3,
+        Meat = 4
     }
 
     class Pizza
@@ -20,21 +20,7 @@ namespace EPAM_task_3._3._3.Pizzeria
 
         public Pizza(int userChoose)
         {
-            switch (userChoose)
-            {
-                case 1:
-                    Type = TypesOfPizza.Margherita;
-                    break;
-                case 2:
-                    Type = TypesOfPizza.Pepperoni;
-                    break;
-                case 3:
-                    Type = TypesOfPizza.Hawaiian;
-                    break;
-                case 4:
-                    Type = TypesOfPizza.Meat;
-                    break;
-            }
+            Type = (TypesOfPizza)userChoose;
         }
     }
 }

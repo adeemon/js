@@ -11,8 +11,7 @@ namespace EPAM_task_3._1._2.WordsCounter
         public static void Start ()
         {
             OutputHandler.PrintWelcomeMessage();
-            int chooseOfUser = 0;
-            Int32.TryParse(Console.ReadLine(), out chooseOfUser);
+            int.TryParse(Console.ReadLine(), out int chooseOfUser);
             ChoosingOfAction(chooseOfUser);
             return;
         }

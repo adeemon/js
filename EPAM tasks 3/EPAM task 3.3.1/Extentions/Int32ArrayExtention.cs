@@ -25,9 +25,6 @@ namespace EPAM_task_3._3._1.Extentions
 
         public static int Summ(this int[] array)
         {
-            //in that place my 7.0 Net says me that i cant use "default"
-            //it is reson why my methods isn't generic T.T
-            //but for all other types of number methods will be almost similar the "int"
             int summOfElements = 0;
 
             if (array.Length == 0 || array == null)

@@ -80,7 +80,10 @@ namespace EPAM_task_3._1._2.WordsCounter
         {
             foreach (Word wordInList in listOfWords)
             {
-                if (wordInList.Data.ToLower() == word.ToLower()) return true;
+                if (wordInList.Data.ToLower() == word.ToLower())
+                {
+                    return true;
+                }
             }
             return false;
         }
@@ -89,7 +92,10 @@ namespace EPAM_task_3._1._2.WordsCounter
         {
             for (int i=0; i<input.Length;++i)
             {
-                if (!Char.IsLetter(input[i])) return false;
+                if (!Char.IsLetter(input[i]))
+                {
+                    return false;
+                }
             }
             return true;
         }
