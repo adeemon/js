@@ -1,54 +1,43 @@
-
 let inputString = "У попа была собака";
 
 function isLetter(c) {
-  if (c)
-  return c.toLowerCase() !== c.toUpperCase();
+    if (c)
+        return c.toLowerCase() !== c.toUpperCase();
 }
 
-function deleteSameChars (inputStr) 
-{
-  let arrayOfSameWords = findSameChars(inputStr) ;
-  let outputString = "";
-  
-  console.log(arrayOfSameWords);
+function deleteSameChars(inputStr) {
+    let arrayOfSameWords = findSameChars(inputStr);
+    let outputString = "";
 
-  for (let i=0; i<inputStr.length; ++i)
-  {
-    if (!arrayOfSameWords.includes(inputStr[i].toLowerCase()))
-    {
-      outputString+=inputStr[i];
-    }
-  }
-  return outputString;
-}
+    console.log(arrayOfSameWords);
 
-function findSameChars (inputString)
-{
-  let arrayOfSameWords = [];
-  for (let i=0; i < inputString.length-1;++i)
-  {
-  	if (isLetter(inputString[i])&&!(arrayOfSameWords.includes(inputString[i].toLowerCase())))
-    {
-      let counter = 1;
-      let nextSymbol = inputString[i+counter].toLowerCase();
-      
-      while (isLetter(nextSymbol))
-      {
-      	if (inputString[i].toLowerCase()==nextSymbol.toLowerCase()) 
-        {
-        	arrayOfSameWords.push(inputString[i].toLowerCase());
-          break;
+    for (let i = 0; i < inputStr.length; ++i) {
+        if (!arrayOfSameWords.includes(inputStr[i].toLowerCase())) {
+            outputString += inputStr[i];
         }
-        counter++;
-        nextSymbol = inputString[i+counter];
-      }
     }
-  }
-  return arrayOfSameWords;
+    return outputString;
 }
 
-console.log (deleteSameChars(inputString));
+function findSameChars(inputString) {
+    let arrayOfSameWords = [];
+    for (let i = 0; i < inputString.length - 1; ++i) {
+        let symbol = inputString[i].toLowerCase();
+        if (isLetter(inputString[i]) && !(arrayOfSameWords.includes(symbol))) {
+            let counter = 1;
+            let nextSymbol = inputString[i + counter].toLowerCase();
 
+            while (isLetter(nextSymbol)) {
+                if (symbol == nextSymbol) {
+                    arrayOfSameWords.push(symbol);
+                    break;
+                }
+                counter++;
+                nextSymbol = inputString[i + counter];
+            }
+        }
+    }
+    return arrayOfSameWords;
+}
 
-
+console.log(deleteSameChars(inputString));

@@ -15,15 +15,12 @@ namespace EPAM_task_4._1._1
 
         static DateTime lastRead = DateTime.MinValue;
 
-        //public static List<RenameNotes> RenameNote;
-
         public static void OnCreated(object source, FileSystemEventArgs e)
         {
             Console.WriteLine($"File: {e.FullPath} {e.ChangeType}");
 
             var directory = @"D:\EPAMtask4";
             var pathForBackups = directory + "backups";
-            var name = e.Name;
             DirectoryInfo diMain = new DirectoryInfo(pathForBackups);
 
             Console.WriteLine(e.FullPath);
@@ -89,13 +86,6 @@ namespace EPAM_task_4._1._1
                 sb.Append(s);
                 sb.Append("|");
             }
-
-            //RenameNotes newNote = new RenameNotes();
-            //newNote.TimeOfRename = DateTime.Now;
-            //newNote.OldPath = e.OldFullPath;
-            //newNote.NewPath = e.FullPath;
-
-            //RenameNote.Add(newNote);
 
             StreamWriter f = new StreamWriter(pathForBackups + @"\" + e.OldName, true);
             Console.WriteLine("Old path = {0}", pathForBackups + @"\" + e.OldName);
